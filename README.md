@@ -1,51 +1,35 @@
-# 🧬 BioDB_SQL_API_Project
+# BioDB_SQL_API_Project
 
-This repository contains the *Biological Database Integration Project* developed as part of MSc Bioinformatics coursework.  
-It demonstrates the integration of multiple biological data sources — **Ensembl**, **UniProt**, **KEGG**, and **miRBase** — using a combination of **R** scripts and **SQL relational design**.
+Biological database integration project combining **R + SQL + APIs** to unify annotations from Ensembl, UniProt, KEGG, and miRBase.
 
----
+## Objective
+Build a reproducible mini data-integration pipeline that:
+1. retrieves biological entities from major resources,
+2. standardizes identifiers,
+3. stores harmonized records in a relational schema,
+4. supports downstream querying and interpretation.
 
-## 📂 Repository Contents
+## Repository Contents
+- `BD_assignment.R` — R workflow for API retrieval, transformation, and integration
+- `BD_assignment.sql` — relational schema and SQL components
+- `BD_asignment.pdf` — coursework/report documentation
 
-| File | Description |
-|------|--------------|
-| **BD_assignment.pdf** | Project report documenting the R–SQL integration workflow, methodology, and results. |
-| **BD_assignment.R** | Main R script performing data retrieval and integration using REST APIs, BioMart, and MySQL. |
-| **BD_assignment.sql** | MySQL schema defining the relational structure for genes, proteins, pathways, and miRNAs. |
+## Skills Demonstrated
+- API-driven biological data ingestion
+- relational schema design for bioinformatics entities
+- R-to-SQL integration workflows
+- reproducible scripting and data transformation logic
 
----
+## Core Tools
+- R (`httr`, `jsonlite`, `biomaRt`, `RMySQL`, `clusterProfiler`)
+- MySQL
+- REST APIs (UniProt, KEGG; Ensembl access patterns)
 
-## ⚙️ Overview
+## Run Concept (high-level)
+1. Configure database credentials in R script.
+2. Execute data retrieval and mapping functions.
+3. Persist mapped outputs into normalized SQL tables.
+4. Validate integrated tables with SQL queries and summary checks.
 
-The project builds an **automated data pipeline** to:
-1. Retrieve gene and protein data from **Ensembl** and **UniProt** via API.
-2. Map **KEGG** pathways and perform functional enrichment using `clusterProfiler`.
-3. Integrate **miRNA** information from **miRBase**.
-4. Store all data in a structured **MySQL** database for downstream querying and analysis.
-
----
-
-## 🧩 Key Technologies
-- **R** – for scripting, data retrieval, and enrichment analysis  
-- **MySQL** – for database design and relational integration  
-- **REST APIs** – for accessing UniProt and KEGG resources  
-- **biomaRt**, **RMySQL**, **httr**, **jsonlite**, **clusterProfiler** – main R packages used  
-
----
-
-## 🧠 Learning Outcomes
-- Designing relational schemas for biological data  
-- Accessing bioinformatics APIs programmatically  
-- Integrating heterogeneous biological datasets  
-- Applying R-based functional and pathway analysis  
-- Bridging R dataframes and SQL tables  
-
----
-
-## 📊 Database Schema Summary
-**Tables included:**
-- `gene_annotations` – Ensembl gene information  
-- `kegg_data` – KEGG pathway enrichment results  
-- `mirna_data` – miRNA mapping  
-- `summary` – combined relational table joining all datasets  
-
+## Recruiter-facing Note
+This project highlights real-world integration thinking: moving from fragmented biological sources to a queryable, analysis-ready data model.
